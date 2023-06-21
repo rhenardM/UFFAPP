@@ -36,7 +36,7 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Gestion</a></h1>
+      <h1 class="logo me-auto"><a href="accueil.php">Onlyway Travel</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -48,7 +48,7 @@
           <li><a class="nav-link scrollto" href="#team"></a></li>
           <li><a class="nav-link scrollto" href="#contact"></a></li>
           <li><a class="getstarted scrollto" href="page-login.php">Connexion</a></li>
-          <li><a class="getstarted scrollto" href="page-register.php">Crée votre compte</a></li>
+          <!--<li><a class="getstarted scrollto" href="page-register.php">Crée votre compte</a></li>-->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -62,14 +62,14 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-          <h1>Notre plateforme pour gestion</h1>
-          <h2>Bienvenue sur notre plateforme de gestions !</h2>
+          <h1>Notre plateforme pour la gestion des personels</h1>
+          <h2>Bienvenue sur notre plateforme!</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="#about" class="btn-get-started scrollto">Voir plus...</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-          <img src="assets1/img/hero-img.png" class="img-fluid animated" alt="">
+          <img src="assets1/img/dm-img.jpg" class="img-fluid animated" alt="">
         </div>
       </div>
     </div>

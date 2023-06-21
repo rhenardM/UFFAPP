@@ -1,3 +1,32 @@
+<?php 
+@$valider=$_POST['valider'];
+@$nom=$_POST['nom'];
+@$email=$_POST['email'];
+@$password=$_POST['password'];
+@$pass_comfirm=$_POST['pass_comfirm'];
+@$message= '';
+if(isset($valider)){ 
+    if(empty($nom)) $message="<li> Non laisser vide !</li>";
+    if(empty($email)) $message.="<li>Email laisser vide </li>";
+    if(empty($password)) $message.="<li>Mot de passe invalide !</li>";
+    if(($password!=$pass_comfirm))$message.="<li>Mot de passe non identique !</li>";
+    if(empty($message)){
+        include('login-connexion.php');
+        $req=$pdo->prepare("SELECT id FROM user_register WHERE email=? limit 1");
+        $req->setFetchMode(PDO::FETCH_ASSOC);
+        $req->execute(array($email));
+        $tab=$req->fetchAll();
+        if(count($tab)>0)
+            $message ="<li> email existe déjà!</li>";
+        else{ 
+            $ins=$pdo->prepare("INSERT INTO user_register(nom,email, password) VALUES(?,?,?)");
+            $ins->execute(array($nom,$email,md5($password)));
+            $message = "valeurs bien inserets";
+            header("location:page-login.php");
+          }         
+ }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,50 +62,42 @@
 <body>
   <main>
     <div class="container">
-
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
               <div class="d-flex justify-content-center py-4">
-                <a href="index.html" class="logo d-flex align-items-center w-auto">
+                <a href="" class="logo d-flex align-items-center w-auto">
                   <img src="" alt="">
-                  <span class="d-none d-lg-block">Gestion</span>
+                  <span class="d-none d-lg-block">Onlyway Travel</span>
                 </a>
               </div><!-- End Logo -->
-
               <div class="card mb-3">
-
                 <div class="card-body">
-
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Crée votre compte</h5>
-                    <p class="text-center small">Entrer vos informations personels</p>
+                    <h5 class="card-title text-center pb-0 fs-4"></h5>
+                    <p class="text-center small"></p>
+                    <?php if (!empty($message)) {?>
+                    <div class="alert alert-danger">
+                        <?= $message ?>
+                    </div>
+                    <?php } ?>                                                    
                   </div>
-
-                  <form class="row g-3 needs-validation" novalidate>
+                  <form method="POST" class="row g-3 needs-validation" novalidate>
                     <div class="col-12">
-                      <label for="yourName" class="form-label">Votre Nom</label>
-                      <input type="text" name="name" class="form-control" id="yourName" required>
+                      <label for="yourName" class="form-label">Nom</label>
+                      <input type="text" name="nom" class="form-control" id="yourName" required>
                       <div class="invalid-feedback">Please, entrez votre nom!</div>
                     </div>
-
                     <div class="col-12">
-                      <label for="yourEmail" class="form-label">Votre mail</label>
-                      <input type="email" name="email" class="form-control" id="yourEmail" required>
-                      <div class="invalid-feedback">Veuillez saisir une adresse e-mail valide !</div>
-                    </div>
-
-                    <div class="col-12">
-                      <label for="yourUsername" class="form-label">Nom d'utilisateur</label>
+                      <label for="yourUsername" class="form-label">Email</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
+                        <input type="email" name="email" class="form-control" id="yourUsername" required>
                         <div class="invalid-feedback">Veuillez choisir un nom d'utilisateur.</div>
                       </div>
                     </div>
-
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Mot de passe</label>
                       <input type="password" name="password" class="form-control" id="yourPassword" required>
@@ -84,31 +105,25 @@
                     </div>
 
                     <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
-                        <label class="form-check-label" for="acceptTerms">Je suis d'accord et j'accepte les<a href="#">termes et conditions</a></label>
-                        <div class="invalid-feedback">Vous devez accepter avant de soumettre.</div>
-                      </div>
+                      <label for="yourPassword" class="form-label">Comfirmer mot de passe</label>
+                      <input type="password" name="pass_comfirm" class="form-control" id="yourPassword" required>
+                      <div class="invalid-feedback">S'il vous plait entrez votre mot de passe!</div>
                     </div>
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Créer un compte</button>
+                      <button class="btn btn-primary w-100" name="valider" type="submit">Créer un compte</button>
                     </div>
                     <div class="col-12">
-                      <p class="small mb-0">Vous avez déjà un compte? <a href="page-login.php">S'authentifier</a></p>
+                      <p class="small mb-0">Vous avez déjà un compte? <a href="">S'authentifier</a></p>
                     </div>
                   </form>
-
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </section>
-
     </div>
   </main><!-- End #main -->
-
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
