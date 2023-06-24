@@ -1,42 +1,23 @@
 <?php
-session_start();
-@$valider=$_POST['valider'];
-@$email= $_POST['email'];
-@$password=$_POST['password'];
-if(isset($_POST['valider'])){
-  if(isset($_POST['email']) and !empty($_POST['email'])){
-     if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-        if(isset($_POST['password']) and !empty($_POST['password'])){
-
-            require 'login-connexion.php';
-
-            $password = md5($_POST['password']);
-
-            $getdata = $pdo->prepare("SELECT email FROM user_register WHERE email =? and password=?");
-            $getdata->execute(array($_POST['email'], $password));
-
-            $rows = $getdata->rowCount();
-
-            if($rows==true){
-                //$_SESSION['user_register']=$_POST['email'];
-                header("location:Dashbord.php"); 
-            }else
-            {
-                $erreur="Nom d'utlisateur ou mot de passe inconnue !";  
-            }
-            
-        }else
-        {
-            $erreur="Veuillez saisire votre mot de passe !";
+    session_start();          
+    @$email=$_POST['email'];
+    @$pass=$_POST['pass'];
+    @$submit=$_POST['submit'];
+    $message='';
+      if(isset($_POST['submit'])){ 
+        include("login-connexion.php");
+        $req=$pdo->prepare("SELECT * FROM user_register WHERE email=? and password=? limit 1 ");
+        $req->setFetchMode(PDO::FETCH_ASSOC);
+        $req->execute(array($email,md5($pass)));
+        $tab=$req->fetchAll();
+          if(count($tab)==0)                                      
+              $message="<li> Mauvais login ou mot de passe!</li>";
+              else {
+                $_SESSION["autoriser"]="oui";
+                $_SESSION["nom"]=strtoupper($tab[0]["nom"]);
+                header("location:Dashbord.php");       
+              }
         }
-        
-     }else{
-        $erreur="Veuillez entrer un nom d'utilisateur valide !";
-     }
-    }else{
-        $erreur="Veuillez entrer un nom d'utlisateur !";
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,33 +65,27 @@ if(isset($_POST['valider'])){
                     <p class="text-center small"></p>
                   </div>
                       <!-- Message Error from script_login.php ! -->
-                        <?php if(!empty($erreur)){?>          
-                        <div class="alert alert-danger d-flex align-items-center" role="alert" >
-                        <svg  xmlns="http://www.w3.org/2000/svg"  width="25px" height="20px" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
-                            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                        </svg>
-                            <?php echo $erreur?></div>
-                        <?php }?>
+                      <?php if (!empty($message)) {?>
+                    <div class="alert alert-danger">
+                        <?= $message ?>
+                    </div>
+                    <?php } ?>  
+                        
                       <!-- fin Message -->   
-                  <form method="POST" class="row g-4 needs-validation" novalidate>
+                  <form method="post" class="row g-4">
                     <div class="col-12">
                       <label for="" class="form-label">Nom d'utilisateur</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
                         <input type="text" name="email" class="form-control" id="" >
-                        <div class="invalid-feedback">S'il vous plaît entrez votre nom d'utilisateur.</div>
                       </div>
                     </div>
                     <div class="col-12">
                       <label for="" class="form-label">Mot de passe</label>
-                      <input type="password" name="password" class="form-control" id="" >
-                      <div class="invalid-feedback">s'il vous plait entrez votre mot de passe!</div>
+                      <input type="password" name="pass" class="form-control" id="" >
                     </div>
                     <div class="col-12">
-                      <button type="submit" name="valider" class="w-100 btn btn-primary btn-sm">S'authentifier</button>
-                    </div>
-                    <div class="col-12">
-                      <p class="small mb-0">Vous n'avez pas de compte ?<a href="page-register.php">Créer un compte</a></p>
+                      <button type="submit" name="submit" class="w-100 btn btn-primary btn-sm">S'authentifier</button>
                     </div>
                   </form>
                 </div>
@@ -121,7 +96,6 @@ if(isset($_POST['valider'])){
       </section>
     </div>
   </main><!-- End #main -->
-
   <!-- Vendor JS Files -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>

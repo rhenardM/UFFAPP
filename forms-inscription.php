@@ -1,6 +1,7 @@
 <?php 
     $submit= @$_POST["submit"];
     $nom= @$_POST["nom"];
+    $id= @$_POST["id"];
     $postnom= @$_POST["postnom"];
     $prenom = @$_POST["prenom"];
     $sexe= @$_POST["sexe"];
@@ -134,25 +135,12 @@
                     <input type="number" name="num_tuteur"class="form-control" placeholder="numero du tuteur">
                   </div>
                 </div>
-               
                 <div class="row mb-3">
                   <label for="inputTime" class="col-sm-2 col-form-label">Time</label>
                   <div class="col-sm-4">
                     <input type="time" class="form-control">
                   </div>
                 </div>
-                <div class="row mb-3">
-                  <label for="inputColor" class="col-sm-2 col-form-label">Color Picker</label>
-                  <div class="col-sm-4">
-                    <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#4154f1" title="Choose your color">
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label for="inputPassword" class="col-sm-2 col-form-label">Motivation</label>
-                  <div class="col-sm-6">
-                    <textarea class="form-control" style="height: 100px"></textarea>
-                  </div>
-                </div><br>
                 <div class="row mb-3">
                   <div class="col-sm-4 d-flex-justify-content ">
                     <button type="submit" name="submit" class="btn btn-primary">Valider</button>

@@ -14,8 +14,8 @@
           <li class="breadcrumb-item active">Table</li>
         </ol>
       </nav>
-    </div><!-- End Page Title -->
-
+    </div>
+    <!-- End Page Title -->
     <section class="section">
       <div class="row">
         <div class="col-lg-12">
@@ -27,7 +27,7 @@
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th scope="col"></th>
+                    <th scope="col">#</th>
                     <th scope="col">biellet</th>
                     <th scope="col">Dossier</th>
                     <th scope="col">passeport</th>
@@ -41,14 +41,26 @@
                   </tr>
                 </thead>
                 <tbody>
-                <?php require 'login-connexion.php';  
-                  $query="select * from tb_frais";
-                  $pdostmt=$pdo->prepare($query);
-                  $pdostmt->execute();
+                    <?php require 'login-connexion.php';?>
+                    <!-- Delete info-->
+                <?php           
+                    $id="";
+                    if(isset($_POST['delete'])){
+                    $id = $_POST['id'];
+                    $sql= $pdo->prepare("DELETE FROM tb_frais WHERE id = :id");
+                    $sql->fetch(PDO::FETCH_OBJ);
+                    $result= $sql->execute(['id'=>$id]);
+                  }
+                ?>
+                    <!-- Affichage info-->
+                <?php
+                    $query="select * from tb_frais";
+                    $pdostmt=$pdo->prepare($query);
+                    $pdostmt->execute();
                 ?>
                 <?php while($ligne=$pdostmt->fetch(PDO::FETCH_ASSOC)):?>
                   <tr>
-                    <th scope="row"></th>
+                    <th scope="row"><?php echo $ligne["id"]; ?></th>
                     <td><?php echo $ligne["f_billet"]; ?>&nbsp;$</td>
                     <td><?php echo $ligne["f_ouverture_doss"]; ?>&nbsp;$</td>
                     <td><?php echo $ligne["f_passport"]; ?>&nbsp;$</td>
@@ -61,8 +73,12 @@
                     <td><?php echo $ligne["datePaie"]; ?></td>
                     <td>
                       <div class="d-flex justify-content">
-                      <button  type="button" class="btn btn-info bi bi-pencil-square btn-sm"  data-bs-toggle="modal"  data-bs-target="#exampleModal"></button>&nbsp;
-                      <button class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i></button>
+                          <button  type="button" class="btn btn-info bi bi-pencil-square btn-sm"  data-bs-toggle="modal"  data-bs-target="#exampleModal"> 
+                          </button>&nbsp;
+                      <form onsubmit="confirm('Vous le vous vraiment supprimer cet enregistrement ?')" method="post">
+                          <input type="hidden" name="id" value="<?php echo $ligne["id"]; ?>">
+                          <button name="delete" class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i></button>
+                      </form> 
                       </div>
                     </td>
                   </tr>

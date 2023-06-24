@@ -27,7 +27,7 @@
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th scope="col"></th>
+                    <th scope="col">#</th>
                     <th scope="col">Nom document</th>
                     <th scope="col">Type de document</th>
                     <th scope="col">Nom de la personne</th>
@@ -36,28 +36,42 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <!-- integration modal -->
-                <?php require 'login-connexion.php';  
-                
-                  $query="select * from tb_document";
+                  <!-- Include the connexion-->
+                  <?php require 'login-connexion.php';  ?>
+
+                  <!-- Delete info-->
+                <?php           
+                    $id="";
+                    if(isset($_POST['delete'])){
+                    $id = $_POST['id'];
+                    $sql= $pdo->prepare("DELETE FROM tb_document WHERE id = :id");
+                    $sql->fetch(PDO::FETCH_OBJ);
+                    $result= $sql->execute(['id'=>$id]);
+                  }
+                ?>
+                <!-- Affichage  info-->
+                <?php 
+                  $query="SELECT * FROM tb_document";
                   $pdostmt=$pdo->prepare($query);
                   $pdostmt->execute();
                 ?>
                 <?php while($ligne=$pdostmt->fetch(PDO::FETCH_ASSOC)):?>
                   <tr>
-                    <th scope="row"></th>
+                    <th scope="row"><?php echo $ligne["id"]; ?></th>
                     <td><?php echo $ligne["nom_doc"]; ?>&nbsp;</td>
                     <td><?php echo $ligne["type_doc"]; ?>&nbsp;</td>
                     <td><?php echo $ligne["nom_personne"]; ?>&nbsp;</td>
                     <td><?php echo $ligne["descption"]; ?>&nbsp;</td>
                     <td>
                       <!-- integration modal -->
-                      <?php //require 'login-connexion.php';?>
+                      <?php //require 'modal.php';?>
                       <!-- end integration modal -->
-                      <?php require 'modal.php';?>
                       <div class="d-flex justify-content">
                       <button  type="button" class="btn btn-info bi bi-pencil-square btn-sm"  data-bs-toggle="modal"  data-bs-target="#exampleModal"></button>&nbsp;
-                      <button class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i></button>
+                      <form onsubmit="alert('Vous le vous vraiment supprimer cet enregistrement ?')" method="post">
+                          <input type="hidden" name="id" value="<?php echo $ligne["id"]; ?>">
+                          <button name="delete" class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i></button>
+                      </form>      
                       </div>
                     </td>
                   </tr>

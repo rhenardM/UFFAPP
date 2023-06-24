@@ -5,17 +5,14 @@ if (require("login-connexion.php")) {
         $id = $_POST['id']*1;
         $pdo=include("login-connexion.php");
         try {
-        $req = $pdo->prepare("UPDATE tb_inscription SET nom=:nom, postnom=:postnom, prenom=:prenom, sexe=:sexe, numero=:numero, age=:age,nom_tuteur=:nom_tuteur,num_tuteur=:num_tuteur  WHERE id=:id");
-        var_dump($req);
+        $req = $pdo->prepare("UPDATE tb_document SET nom_doc=:nom_doc, type_doc=:type_doc, nom_personne=:nom_personne, descption=:descption WHERE id =:id");
+        //var_dump($req);
         $req->execute([
             'id'=>$id,
-            'nom'=>$_POST['nom'],
-            'postnom'=>$_POST['postnom'],
-            'prenom'=>$_POST['prenom'],
-            'sexe'=>$_POST['sexe'],
-            'age'=>$_POST['age'],
-            'nom_tuteur'=>$_POST['nom_tuteur'],
-            'num_tuteur'=>$_POST['num_tuteur']
+            'nom_doc'=>$_POST['nom_doc'],
+            'type_doc'=>$_POST['type_doc'],
+            'nom_personne'=>$_POST['nom_personne'],
+            'descption'=>$_POST['descption']
         ]);
             header("Location:tables-inscription.php");
             echo'Enregistrement modifier avec succes ';        
@@ -27,10 +24,9 @@ if (require("login-connexion.php")) {
         }
     }
 }
-
 function show($id){ 
     if (require("login-connexion.php")) {
-        $req = $pdo->prepare('SELECT * FROM tb_inscription WHERE id=:id');
+        $req = $pdo->prepare('SELECT * FROM tb_document WHERE id=:id');
         $req->execute(['id'=>$id]);
         $tab = $req->fetch(PDO::FETCH_ASSOC);
         return $tab;

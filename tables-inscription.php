@@ -1,7 +1,6 @@
-
+<?php //include "modal.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <body>
   <!-- ======= Header ======= -->
   <?php include "header.php"; ?>
@@ -18,11 +17,9 @@
         </ol>
       </nav>
     </div><!-- End Page Title -->
-
     <section class="section">
       <div class="row">
         <div class="col-lg-12">
-
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Les enregistrements des clients</h5>
@@ -30,7 +27,7 @@
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th scope="col"></th>
+                    <th scope="col">#</th>
                     <th scope="col">Nom</th>
                     <th scope="col">Post-nom</th>
                     <th scope="col">Prénom</th>
@@ -43,14 +40,25 @@
                   </tr>
                 </thead>
                 <tbody>
-                <?php require 'login-connexion.php';  
-                  $query="select * from tb_inscription";
+                <?php require 'login-connexion.php';   ?>
+                    <!-- Delete info-->
+                <?php           
+                    $id="";
+                    if(isset($_POST['delete'])){
+                    $id = $_POST['id'];
+                    $sql= $pdo->prepare("DELETE FROM tb_inscription WHERE id = :id");
+                    $sql->fetch(PDO::FETCH_OBJ);
+                    $result= $sql->execute(['id'=>$id]);
+                  }
+                ?>
+                <?php
+                  $query="SELECT * FROM tb_inscription";
                   $pdostmt=$pdo->prepare($query);
                   $pdostmt->execute();
                 ?>
                 <?php while($ligne=$pdostmt->fetch(PDO::FETCH_ASSOC)):?>
                   <tr>
-                    <th scope="row"></th>
+                    <th scope="row"><!--<?php echo $ligne["id"]; ?>--></th>
                     <td><?php echo $ligne["nom"]; ?></td>
                     <td><?php echo $ligne["postnom"]; ?></td>
                     <td><?php echo $ligne["prenom"]; ?></td>
@@ -60,12 +68,11 @@
                     <td><?php echo $ligne["nom_tuteur"]; ?></td>
                     <td><?php echo $ligne["num_tuteur"]; ?></td>
                     <td>
-                    <!-- integration modal -->
-                      <?php //require 'modal.php';?>
-                    <!--end integration modal -->
                       <div class="d-flex justify-content">
-                      <button  type="button" class="btn btn-info bi bi-pencil-square btn-sm"  data-bs-toggle="modal"  data-bs-target="#exampleModal"></button>&nbsp;
-                      <button class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i></button>
+                      <button  type="button"class="btn btn-info bi bi-pencil-square btn-sm" data-bs-toggle="modal"  data-bs-target="#exampleModal"></button>&nbsp;
+                      <form onsubmit="alert('Vous le vous vraiment supprimer cet enregistrement ?')" method="post">
+                          <input type="hidden" name="id" value="">
+                      <button name="" class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i></button>
                       </div>
                     </td>
                   </tr>
@@ -75,7 +82,6 @@
               <!-- End Table with stripped rows -->
             </div>
           </div>
-
         </div>
       </div>
     </section>

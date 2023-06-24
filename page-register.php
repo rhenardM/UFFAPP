@@ -111,10 +111,6 @@ if(isset($valider)){
                     </div>
                     <div class="col-12">
                       <button class="btn btn-primary w-100" name="valider" type="submit">Créer un compte</button>
-                    </div>
-                    <div class="col-12">
-                      <p class="small mb-0">Vous avez déjà un compte? <a href="">S'authentifier</a></p>
-                    </div>
                   </form>
                 </div>
               </div>

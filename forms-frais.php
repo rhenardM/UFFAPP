@@ -22,7 +22,6 @@
         if(empty($f_passport)) $message.="<li> Veuillez entrer le frais de passeport !</li>";
         if(empty($f_legalisation)) $message.="<li>Veuillez entrer le frais de la legislation!</li>";
         if(empty($f_jugement)) $message.="<li>Veuillez entrer du jugement!</li>";
-        if(empty($f_photo)) $message.="<li>Veuillez entrer la photo de ... !</li>";
         if(empty($f_acompte)) $message.="<li> Veuillez entrer le frais d'acompte!</li>";
         if(empty($f_tranche_1)) $message.="<li> Vueillez entrer le frais de la 1er tranche !</li>";
         if(empty($f_tranche_2)) $message.="<li> Veuillez entrer le frais de la 2em tranche !</li>";
@@ -86,9 +85,9 @@
               <!-- General Form frais -->
               <form method="POST">
                 <div class="row mb-3">
-                  <label for="inputText" class="col-sm-2 col-form-label">matricule</label>
+                  <label for="inputText" class="col-sm-2 col-form-label">Ajouter un fichier</label>
                   <div class="col-sm-3">
-                    <input type="number"  name="" class="form-control" placeholder="">
+                    <input class="form-control"  name="f_photo" type="file" id="formFile">
                   </div>
                   <label for="inputText" class="col-sm-2 col-form-label">Date</label>
                   <div class="col-sm-3">
@@ -133,12 +132,6 @@
                   <label for="inputTime" class="col-sm-2 col-form-label">2em Tranche</label>
                   <div class="col-sm-3">
                     <input type="number"  name="f_tranche_2" class="form-control" placeholder="entrer le frais 2em trache">
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label for="inputNumber" class="col-sm-2 col-form-label">Entrer une photo</label>
-                  <div class="col-sm-3">
-                    <input class="form-control"  name="f_photo" type="file" id="formFile">
                   </div>
                 </div>
                 <br>
