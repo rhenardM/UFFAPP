@@ -2,11 +2,11 @@
     session_start();          
     @$email=$_POST['email'];
     @$pass=$_POST['pass'];
-    @$submit=$_POST['submit'];
+    @$valider=$_POST['valider'];
     $message='';
-      if(isset($_POST['submit'])){ 
+      if(isset($_POST['valider'])){ 
         include("login-connexion.php");
-        $req=$pdo->prepare("SELECT * FROM user_register WHERE email=? and password=? limit 1 ");
+        $req=$pdo->prepare("SELECT * FROM user_register WHERE email=? and PASSWORD=? limit 1 ");
         $req->setFetchMode(PDO::FETCH_ASSOC);
         $req->execute(array($email,md5($pass)));
         $tab=$req->fetchAll();
@@ -17,7 +17,7 @@
                 $_SESSION["nom"]=strtoupper($tab[0]["nom"]);
                 header("location:Dashbord.php");       
               }
-        }
+      }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +62,7 @@
                 <div class="card-body">
                   <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4"></h5>
-                    <p class="text-center small"></p>
+                    <p class="text-center small">Veuillez d'abord vous authentifier pour y acceder </p>
                   </div>
                       <!-- Message Error from script_login.php ! -->
                       <?php if (!empty($message)) {?>
@@ -70,7 +70,6 @@
                         <?= $message ?>
                     </div>
                     <?php } ?>  
-                        
                       <!-- fin Message -->   
                   <form method="post" class="row g-4">
                     <div class="col-12">
@@ -85,7 +84,7 @@
                       <input type="password" name="pass" class="form-control" id="" >
                     </div>
                     <div class="col-12">
-                      <button type="submit" name="submit" class="w-100 btn btn-primary btn-sm">S'authentifier</button>
+                      <button type="submit" name="valider" class="w-100 btn btn-primary btn-sm">S'authentifier</button>
                     </div>
                   </form>
                 </div>

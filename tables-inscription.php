@@ -27,7 +27,7 @@
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
+                    <th scope="col"></th>
                     <th scope="col">Nom</th>
                     <th scope="col">Post-nom</th>
                     <th scope="col">Prénom</th>
@@ -42,14 +42,14 @@
                 <tbody>
                 <?php require 'login-connexion.php';   ?>
                     <!-- Delete info-->
-                <?php           
-                    $id="";
-                    if(isset($_POST['delete'])){
-                    $id = $_POST['id'];
-                    $sql= $pdo->prepare("DELETE FROM tb_inscription WHERE id = :id");
-                    $sql->fetch(PDO::FETCH_OBJ);
-                    $result= $sql->execute(['id'=>$id]);
-                  }
+                <?php              
+                      $id="";
+                      if(isset($_POST['delete'])){
+                      $id = $_POST['id'];
+                      $sql= $pdo->prepare("DELETE FROM tb_inscription WHERE id = :id");
+                      $sql->fetch(PDO::FETCH_OBJ);
+                      $result= $sql->execute(['id'=>$id]);
+                    }
                 ?>
                 <?php
                   $query="SELECT * FROM tb_inscription";
@@ -69,10 +69,11 @@
                     <td><?php echo $ligne["num_tuteur"]; ?></td>
                     <td>
                       <div class="d-flex justify-content">
-                      <button  type="button"class="btn btn-info bi bi-pencil-square btn-sm" data-bs-toggle="modal"  data-bs-target="#exampleModal"></button>&nbsp;
-                      <form onsubmit="alert('Vous le vous vraiment supprimer cet enregistrement ?')" method="post">
-                          <input type="hidden" name="id" value="">
-                      <button name="" class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i></button>
+                      <button type="button"class="btn btn-info bi bi-pencil-square btn-sm" data-bs-toggle="modal"  data-bs-target="#exampleModal"></button>&nbsp;
+                      <form onsubmit="confirm('Vous le vous vraiment supprimer cet enregistrement ?')" method="post">
+                          <input type="hidden" name="id" value="<?php echo $ligne["id"];?>">
+                          <button name="delete" class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i></button>
+                      </form> 
                       </div>
                     </td>
                   </tr>

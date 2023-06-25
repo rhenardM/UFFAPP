@@ -15,8 +15,7 @@
   $message2='';
     //The error message 
     if(isset($submit)){ 
-  
-        if(empty($datePaie)) $message.="<li>Veuillez entrer la date! </li>";
+       // if(empty($datePaie)) $message.="<li>Veuillez entrer la date! </li>";
         if(empty($f_billet))$message.="<li>Veuillez entrer le frais du billet !</li>";
         if(empty($f_ouverture_doss))$message.="<li>Veuillez entrer le frais de l'ouveture de dossier !</li>";
         if(empty($f_passport)) $message.="<li> Veuillez entrer le frais de passeport !</li>";
@@ -26,14 +25,13 @@
         if(empty($f_tranche_1)) $message.="<li> Vueillez entrer le frais de la 1er tranche !</li>";
         if(empty($f_tranche_2)) $message.="<li> Veuillez entrer le frais de la 2em tranche !</li>";
         //include the connexion
-        include "login-connexion.php";
+        include ("login-connexion.php");
         //Register frais
-        if(isset($_POST['submit'])&&!empty($datePaie)&&!empty($f_billet)&&!empty($f_ouverture_doss)
-        &&!empty($f_passport)&&!empty($f_legalisation)&&!empty($f_jugement)&&!empty($f_photo)&&!empty($f_acompte)&&!empty($f_tranche_1)&&!empty($f_tranche_2))
+        if(isset($_POST['submit'])&&!empty($datePai)&&!empty($f_billet)&&!empty($f_ouverture_doss)&&!empty($f_passport)&&!empty($f_legalisation)&&!empty($f_jugement)&&!empty($f_photo)&&!empty($f_acompte)&&!empty($f_tranche_1)&&!empty($f_tranche_2))
         {
-          $sql=$pdo->prepare("INSERT INTO tb_frais(datePaie,f_billet,f_ouverture_doss,f_passport,f_legalisation,f_jugement,f_photo,f_acompte,f_tranche_1,f_tranche_2)
-                                  VALUE   (?,?,?,?,?,?,?,?,?,?) ");
-           $sql->execute(array($datePaie,$f_billet,$f_ouverture_doss,$f_passport,$f_legalisation,$f_jugement,$f_photo,$f_acompte,$f_tranche_1,$f_tranche_2));                              
+            $sql=$pdo->prepare("INSERT INTO tb_frais(datePaie,f_billet,f_ouverture_doss,f_passport,f_legalisation,f_jugement,f_photo,f_acompte,f_tranche_1,f_tranche_2)
+                                      VALUE   (?,?,?,?,?,?,?,?,?,?)");
+            $sql->execute(array($datePaie,$f_billet,$f_ouverture_doss,$f_passport,$f_legalisation,$f_jugement,$f_photo,$f_acompte,$f_tranche_1,$f_tranche_2));  
        // header("Location:index.php");
                               
        if($sql)
@@ -59,7 +57,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="accueil.php">Accueil</a></li>
-          <li class="breadcrumb-item">Forms</li>
+          <li class="breadcrumb-item">Formulaire</li>
           <li class="breadcrumb-item active">Frais</li>
         </ol>
       </nav>
@@ -84,16 +82,6 @@
                     <?php } ?>
               <!-- General Form frais -->
               <form method="POST">
-                <div class="row mb-3">
-                  <label for="inputText" class="col-sm-2 col-form-label">Ajouter un fichier</label>
-                  <div class="col-sm-3">
-                    <input class="form-control"  name="f_photo" type="file" id="formFile">
-                  </div>
-                  <label for="inputText" class="col-sm-2 col-form-label">Date</label>
-                  <div class="col-sm-3">
-                    <input type="DATE"  name="datePaie" class="form-control" placeholder="">
-                  </div>
-                </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Billet</label>
                   <div class="col-sm-3">
@@ -147,7 +135,6 @@
       </div>
     </section>
   </main><!-- End #main -->
-
   <!-- ======= footer ======= -->
 <?php include "footer.php"; ?>
  <!-- End footer -->

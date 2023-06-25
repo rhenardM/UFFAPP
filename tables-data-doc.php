@@ -10,7 +10,7 @@
       <h1>Documents enregistrer</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="accuei.php">Accueil</a></li>
+          <li class="breadcrumb-item"><a href="accueil.php">Accueil</a></li>
           <li class="breadcrumb-item">Tables</li>
           <li class="breadcrumb-item active">Enregistrement du documents</li>
         </ol>
@@ -27,7 +27,7 @@
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
+                    <th scope="col"></th>
                     <th scope="col">Nom document</th>
                     <th scope="col">Type de document</th>
                     <th scope="col">Nom de la personne</th>
@@ -38,7 +38,7 @@
                 <tbody>
                   <!-- Include the connexion-->
                   <?php require 'login-connexion.php';  ?>
-
+                  <?php //require 'modal.php';?>
                   <!-- Delete info-->
                 <?php           
                     $id="";
@@ -57,17 +57,17 @@
                 ?>
                 <?php while($ligne=$pdostmt->fetch(PDO::FETCH_ASSOC)):?>
                   <tr>
-                    <th scope="row"><?php echo $ligne["id"]; ?></th>
+                    <th scope="row"><!--?php echo $ligne["id"]; ?--></th>
                     <td><?php echo $ligne["nom_doc"]; ?>&nbsp;</td>
                     <td><?php echo $ligne["type_doc"]; ?>&nbsp;</td>
                     <td><?php echo $ligne["nom_personne"]; ?>&nbsp;</td>
                     <td><?php echo $ligne["descption"]; ?>&nbsp;</td>
                     <td>
                       <!-- integration modal -->
-                      <?php //require 'modal.php';?>
+             
                       <!-- end integration modal -->
                       <div class="d-flex justify-content">
-                      <button  type="button" class="btn btn-info bi bi-pencil-square btn-sm"  data-bs-toggle="modal"  data-bs-target="#exampleModal"></button>&nbsp;
+                      <button type="button" class="btn btn-info bi bi-pencil-square btn-sm"  data-bs-toggle="modal"  data-bs-target="#exampleModal"></button>&nbsp;
                       <form onsubmit="alert('Vous le vous vraiment supprimer cet enregistrement ?')" method="post">
                           <input type="hidden" name="id" value="<?php echo $ligne["id"]; ?>">
                           <button name="delete" class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i></button>
