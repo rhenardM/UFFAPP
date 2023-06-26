@@ -10,7 +10,7 @@ $message='';
     $req->setFetchMode(PDO::FETCH_ASSOC);
     $req->execute(array($email,md5($pass)));
     $tab=$req->fetchAll();
-      if(count($tab)==0)                                      
+      if(count($tab)>0)                                      
           $message="<li> Mauvais login ou mot de passe!</li>";
           else {
             $_SESSION["autoriser"]="oui";
