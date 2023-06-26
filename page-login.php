@@ -1,23 +1,23 @@
 <?php
-    session_start();          
-    @$email=$_POST['email'];
-    @$pass=$_POST['pass'];
-    @$valider=$_POST['valider'];
-    $message='';
-      if(isset($_POST['valider'])){ 
-        include("login-connexion.php");
-        $req=$pdo->prepare("SELECT * FROM user_register WHERE email=? and PASSWORD=? limit 1 ");
-        $req->setFetchMode(PDO::FETCH_ASSOC);
-        $req->execute(array($email,md5($pass)));
-        $tab=$req->fetchAll();
-          if(count($tab)==0)                                      
-              $message="<li> Mauvais login ou mot de passe!</li>";
-              else {
-                $_SESSION["autoriser"]="oui";
-                $_SESSION["nom"]=strtoupper($tab[0]["nom"]);
-                header("location:Dashbord.php");       
-              }
-      }
+session_start();          
+@$email=$_POST['email'];
+@$pass=$_POST['pass'];
+@$valider=$_POST['valider'];
+$message='';
+  if(isset($_POST['valider'])){ 
+    include("login-connexion.php");
+    $req=$pdo->prepare("SELECT * FROM user_register WHERE email=? and PASSWORD=? limit 1 ");
+    $req->setFetchMode(PDO::FETCH_ASSOC);
+    $req->execute(array($email,md5($pass)));
+    $tab=$req->fetchAll();
+      if(count($tab)==0)                                      
+          $message="<li> Mauvais login ou mot de passe!</li>";
+          else {
+            $_SESSION["autoriser"]="oui";
+            $_SESSION["nom"]=strtoupper($tab[0]["nom"]);
+            header("location:Dashbord.php");       
+          }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,7 +76,7 @@
                       <label for="" class="form-label">Nom d'utilisateur</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" name="email" class="form-control" id="" >
+                        <input type="text" name="email" value="" class="form-control" id="" >
                       </div>
                     </div>
                     <div class="col-12">

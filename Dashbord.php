@@ -38,20 +38,20 @@
                     <li class="dropdown-header text-start">
                       <h6>Filter</h6>
                     </li>
-                    <li><a class="dropdown-item" href="#">Ajourd'hui</a></li>
+                    <li><a class="dropdown-item" href="#"></a></li>
                   </ul>
                 </div>
               
                 <div class="card-body">
-                  <h5 class="card-title">Frais payé <span>| Aujourd'hui</span></h5>
+                  <h5 class="card-title">Frais payé <span>|</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-currency-dollar"></i>
+                      <a href="tables-data-doc.php"><i class="bi bi-currency-dollar"></i></a>
                     </div>
                     <div class="ps-3">
-                      <h6>00$</h6>
-                      <span class="text-success small pt-1 fw-bold">00%</span> <span class="text-muted small pt-2 ps-1">Frais payé</span>
+                      <h6>$</h6>
+                      <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Frais payé</span>
 
                     </div>
                   </div>
@@ -69,21 +69,20 @@
                     <li class="dropdown-header text-start">
                       <h6>Filter</h6>
                     </li>
-
-                    <li><a class="dropdown-item" href="#">Aujourd'huit</a></li>
+                    <li><a class="dropdown-item" href="#"></a></li>
                   </ul>
                 </div>
 
                 <div class="card-body">
-                  <h5 class="card-title">Enregistrement Clients <span>| Aujourd'huit</span></h5>
+                  <h5 class="card-title">Enregistrement Clients <span>|</span></h5>
                    
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-journal-text text-info"></i>
+                      <a href="tables-inscription.php"><i class="bi bi-journal-text text-info"></i></a>
                     </div>
                     <div class="ps-3">
                       <h6></h6>
-                      <span class="text-info small pt-1 fw-bold">00%</span> <span class="text-muted small pt-2 ps-1">Les enregistrements fait</span>
+                      <span class="text-info small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Les enregistrements fait</span>
                     </div>
                   </div>
                 </div>
@@ -103,7 +102,7 @@
             </div>
 
             <div class="card-body pb-0">
-              <h5 class="card-title">Rapport<span>| Aujourd'huit</span></h5>
+              <h5 class="card-title"><span></span></h5>
 
               <div id="budgetChart" style="min-height: 400px;" class="echart"></div>
 

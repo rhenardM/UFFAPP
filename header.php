@@ -48,8 +48,8 @@
       </a><!-- End Profile Iamge Icon -->
       <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
         <li class="dropdown-header">
-          <h6>French_M</h6>
-          <span>Web Designer</span>
+          <h6>...</h6>
+          <span>...</span>
         </li>
         <li>
           <hr class="dropdown-divider">

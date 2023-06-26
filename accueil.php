@@ -64,7 +64,7 @@
           <h1>Onlyway travel pour vous servir</h1>
           <h2>Nous sommes une agence de...</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="" class="btn-get-started scrollto">Se connecter a la gestion</a>
+            <a href="page-login.php" class="btn-get-started scrollto">Se connecter a la gestion</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
