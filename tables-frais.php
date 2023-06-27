@@ -27,16 +27,16 @@
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">Date</th>
                     <th scope="col">biellet</th>
                     <th scope="col">Dossier</th>
                     <th scope="col">passeport</th>
                     <th scope="col">legislation</th>
                     <th scope="col">Jugement</th>
                     <th scope="col">Acompte</th>
+                    <th scope="col">Photo</th>
                     <th scope="col">1er Tranche</th>
                     <th scope="col">2em Tranche</th>
-                    <th scope="col">Date</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
@@ -60,22 +60,21 @@
                 ?>
                 <?php while($ligne=$pdostmt->fetch(PDO::FETCH_ASSOC)):?>
                   <tr>
-                    <th scope="row"><?php echo $ligne["id"]; ?></th>
-                    <td><?php echo $ligne["f_billet"]; ?>&nbsp;$</td>
-                    <td><?php echo $ligne["f_ouverture_doss"]; ?>&nbsp;$</td>
-                    <td><?php echo $ligne["f_passport"]; ?>&nbsp;$</td>
-                    <td><?php echo $ligne["f_legalisation"]; ?>&nbsp;$</td>
-                    <td><?php echo $ligne["f_jugement"]; ?>&nbsp;$</td>
-                    <!--<td><?php echo $ligne["f_photo"]; ?></td>-->
-                    <td><?php echo $ligne["f_acompte"]; ?>&nbsp;$</td>
-                    <td><?php echo $ligne["f_tranche_1"]; ?>&nbsp;$</td>
-                    <td><?php echo $ligne["f_tranche_2"]; ?>&nbsp;$</td>
-                    <td><?php echo $ligne["datePaie"]; ?></td>
+                    <td><?php echo $ligne["date"]; ?></td>
+                    <td><?php echo $ligne["billet"]; ?>&nbsp;$</td>
+                    <td><?php echo $ligne["ouverture"]; ?>&nbsp;$</td>
+                    <td><?php echo $ligne["passport"]; ?>&nbsp;$</td>
+                    <td><?php echo $ligne["legalisation"]; ?>&nbsp;$</td>
+                    <td><?php echo $ligne["jugement"]; ?>&nbsp;$</td>
+                    <td><?php echo $ligne["photo"]; ?></td>
+                    <td><?php echo $ligne["acompte"]; ?>&nbsp;$</td>
+                    <td><?php echo $ligne["tranche1"]; ?>&nbsp;$</td>
+                    <td><?php echo $ligne["tranche2"]; ?>&nbsp;$</td>
                     <td>
                       <div class="d-flex justify-content">
                           <button  type="button" class="btn btn-info bi bi-pencil-square btn-sm"  data-bs-toggle="modal"  data-bs-target="#exampleModal"> 
                           </button>&nbsp;
-                      <form onsubmit="confirm('Vous le vous vraiment supprimer cet enregistrement ?')" method="post">
+                      <form onsubmit="alert('Vous le vous vraiment supprimer cet enregistrement ?')" method="post">
                           <input type="hidden" name="id" value="<?php echo $ligne["id"]; ?>">
                           <button name="delete" class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i></button>
                       </form> 

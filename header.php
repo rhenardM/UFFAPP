@@ -1,4 +1,10 @@
-
+<?php
+     session_start();
+     if($_SESSION["autoriser"]!="oui"){
+         header("location:page-login.php");
+         exit();
+     }
+?>
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -43,20 +49,21 @@
     <li class="nav-item dropdown pe-3">
 
       <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-        <img src="" alt="Profile" class="rounded-circle">
+        <img src="assets/img/person.png" alt="Profile" class="rounded-circle text-primary">
         <span class="d-none d-md-block dropdown-toggle ps-2"></span>
       </a><!-- End Profile Iamge Icon -->
       <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
         <li class="dropdown-header">
-          <h6>...</h6>
-          <span>...</span>
+          <!-- Vérification de l'heure de la session -->
+          <span><?php echo(date("H")<18)? ("Bonjour"):("Bonsoir") ?></span>
+          <h6><span> <?= $_SESSION["nomPrenom"] ?>  </span></h6>
         </li>
         <li>
           <hr class="dropdown-divider">
         </li>
-
+       
         <li>
-          <a class="dropdown-item d-flex align-items-center" href="#">
+          <a class="dropdown-item d-flex align-items-center" href="deconnexion.php">
             <i class="bi bi-box-arrow-right"></i>
             <span>Se deconnecter</span>
           </a>
@@ -64,12 +71,9 @@
 
       </ul><!-- End Profile Dropdown Items -->
     </li><!-- End Profile Nav -->
-
   </ul>
 </nav><!-- End Icons Navigation -->
-
 </header><!-- End Header -->
-
 <!-- ======= Sidebar ======= -->
 <aside id="sidebar" class="sidebar">
 

@@ -1,26 +1,28 @@
 <?php 
 @$valider=$_POST['valider'];
 @$nom=$_POST['nom'];
-@$email=$_POST['email'];
+@$prenom=$_POST['prenom'];
+@$login=$_POST['login'];
 @$password=$_POST['password'];
 @$pass_comfirm=$_POST['pass_comfirm'];
 @$message= '';
 if(isset($valider)){ 
     if(empty($nom)) $message="<li> Non laisser vide !</li>";
-    if(empty($email)) $message.="<li>Email laisser vide </li>";
+    if(empty($prenom)) $message.="<li>prenom laisser vide </li>";
+    if(empty($login)) $message.="<li>prenom laisser vide </li>";
     if(empty($password)) $message.="<li>Mot de passe invalide !</li>";
     if(($password!=$pass_comfirm))$message.="<li>Mot de passe non identique !</li>";
     if(empty($message)){
         include('login-connexion.php');
-        $req=$pdo->prepare("SELECT id FROM user_register WHERE email=? limit 1");
+        $req=$pdo->prepare("SELECT id FROM users WHERE login=? limit 1");
         $req->setFetchMode(PDO::FETCH_ASSOC);
-        $req->execute(array($email));
+        $req->execute(array($login));
         $tab=$req->fetchAll();
         if(count($tab)>0)
-            $message ="<li> email existe déjà!</li>";
+            $message ="<li> login existe déjà!</li>";
         else{ 
-            $ins=$pdo->prepare("INSERT INTO user_register(nom,email, password) VALUES(?,?,?)");
-            $ins->execute(array($nom,$email,md5($password)));
+            $ins=$pdo->prepare("INSERT INTO users(nom,prenom, login,password) VALUES(?,?,?,?)");
+            $ins->execute(array($nom,$prenom,$login,md5($password)));
             $message = "valeurs bien inserets";
             header("location:page-login.php");
           }         
@@ -91,10 +93,15 @@ if(isset($valider)){
                       <div class="invalid-feedback">Please, entrez votre nom!</div>
                     </div>
                     <div class="col-12">
-                      <label for="yourUsername" class="form-label">Email</label>
+                      <label for="yourName" class="form-label">prenom</label>
+                      <input type="text" name="prenom" class="form-control" id="yourName" required>
+                      <div class="invalid-feedback">Please, entrez votre nom!</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="yourUsername" class="form-label">Nom d'utilisateur</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="email" name="email" class="form-control" id="yourUsername" required>
+                        <input type="name" name="login" class="form-control" id="yourUsername" required>
                         <div class="invalid-feedback">Veuillez choisir un nom d'utilisateur.</div>
                       </div>
                     </div>
