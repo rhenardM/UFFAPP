@@ -1,0 +1,40 @@
+Base de donner gestion membre
+
+CREATE TABLE users(
+			 id int AUTO_INCREMENT PRIMARY KEY,
+    		 nom varchar (40),
+    		 prenom varchar (40),
+    		 login varchar (40),
+    		 passowrd varchar(40)
+
+);
+CREATE TABLE tb_document(
+			 id int AUTO_INCREMENT PRIMARY KEY,
+    		 nom_doc varchar (40),
+    		 type_doc varchar (40),
+    		 nom_personne varchar (40),
+    		 descption varchar(40)
+);
+CREATE TABLE tb_inscription(
+			 id int AUTO_INCREMENT PRIMARY KEY,
+    		 nom varchar (40),
+    		 prenom varchar (40),
+    		 sexe char (10),
+    		 Numero varchar(40),
+    		 age int,
+    		 nom_tuteur varchar(40),
+    		 num_tuteur varchar(40)
+);
+CREATE TABLE tb_inscription(
+			 id int AUTO_INCREMENT PRIMARY KEY,
+    		 date datetime,
+    		 billet  float,e
+    		 ouverture float,
+    		 passport varchar(40),
+    		 legalisation float,
+    		 photo float,
+    		 jugement float,
+    		 acompte float,
+    		 tranche1 float,
+    		 tranche2 float
+);

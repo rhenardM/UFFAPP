@@ -1,14 +1,13 @@
 <?php
   $benrg= @$_POST["benrg"];
   //$matricule=@$_POST["matricule"];
-  $date=@$_POST["date"];
+  $noms=@$_POST["noms"];
   $billet=@$_POST["billet"];
   $ouverture=@$_POST["ouverture"];
   $passport=@$_POST["passport"];
   $legalisation=@$_POST["legalisation"];
   $jugement=@$_POST["jugement"];
   $photo=@$_POST["photo"];
-  $acompte=@$_POST["acompte"];
   $tranche1=@$_POST["tranche1"];
   $tranche2=@$_POST["tranche2"];
   $message='';
@@ -16,22 +15,22 @@
     //The error message 
     if(isset($benrg)){ 
        // if(empty($date)) $message.="<li>Veuillez entrer la date! </li>";
+        if(empty($noms))$message="<li>Veuillez entrer le nom et prenom du client !</li>";
         if(empty($billet))$message.="<li>Veuillez entrer le frais du billet !</li>";
         //if(empty($ouverture))$message.="<li>Veuillez entrer le frais de l'ouveture de dossier !</li>";
        // if(empty($passport)) $message.="<li> Veuillez entrer le frais de passeport !</li>";
         if(empty($legalisation)) $message.="<li>Veuillez entrer le frais de la legislation!</li>";
         if(empty($jugement)) $message.="<li>Veuillez entrer du jugement!</li>";
-        if(empty($acompte)) $message.="<li> Veuillez entrer le frais d'acompte!</li>";
         if(empty($tranche1)) $message.="<li> Vueillez entrer le frais de la 1er tranche !</li>";
         if(empty($tranche2)) $message.="<li> Veuillez entrer le frais de la 2em tranche !</li>";
         //include the connexion
         include ("login-connexion.php");
         //Register frais
-        if(isset($_POST['benrg'])&&!empty($date)&&!empty($billet)&&!empty($ouverture)&&!empty($passport)&&!empty($legalisation)
-        &&!empty($photo)&&!empty($jugement)&&!empty($acompte)&&!empty($tranche1)&&!empty($tranche2)){
-            $sql=$pdo->prepare("INSERT INTO tb_frais(date,billet,ouverture,passport,legalisation,photo,jugement,acompte,tranche1,tranche2)
-                                      VALUES   (?,?,?,?,?,?,?,?,?,?)");
-            $sql->execute(array($date,$billet,$ouverture,$passport,$legalisation,$photo,$jugement,$acompte,$tranche1,$tranche2));  
+        if(isset($_POST['benrg'])&&!empty($noms)&&!empty($billet)&&!empty($ouverture)&&!empty($passport)&&!empty($legalisation)
+        &&!empty($photo)&&!empty($jugement)&&!empty($tranche1)&&!empty($tranche2)){
+            $sql=$pdo->prepare("INSERT INTO tb_frais(noms,date,billet,ouverture,passport,legalisation,photo,jugement,tranche1,tranche2)
+                                      VALUES   (?,now(),?,?,?,?,?,?,?,?)");
+            $sql->execute(array($noms,$billet,$ouverture,$passport,$legalisation,$photo,$jugement,$tranche1,$tranche2));  
        // header("Location:index.php");
                               
        if($sql)
@@ -82,14 +81,20 @@
                     <?php } ?>
               <!-- General Form frais -->
               <form method="POST">
-                <div class="row mb-3">
-                  <label for="inputText" class="col-sm-2 col-form-label">billet</label>
+              <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Noms</label>
                   <div class="col-sm-3">
-                    <input type="number"  name="billet" class="form-control" placeholder="entrer le frais de billet">
+                    <input type="text"  name="noms" class="form-control" placeholder="Entrer le nom et prenom du payeur">
                   </div>
-                  <label for="inputText" class="col-sm-2 col-form-label">Date</label>
+                </div>
+              <div class="row mb-3">
+                  <label for="inputTime" class="col-sm-2 col-form-label">1ère tranche</label>
                   <div class="col-sm-3">
-                    <input type="date"  name="date" class="form-control" placeholder="entrer le frais de billet">
+                    <input type="number"  name="tranche1" class="form-control" placeholder="entrer le frais 1er tranche">
+                  </div>
+                  <label for="inputTime" class="col-sm-2 col-form-label">2ème Tranche</label>
+                  <div class="col-sm-3">
+                    <input type="number"  name="tranche2" class="form-control" placeholder="entrer le frais 2em trache">
                   </div>
                 </div>
                 <div class="row mb-3">
@@ -119,20 +124,9 @@
                   <div class="col-sm-3">
                     <input type="number"  name="jugement" class="form-control" placeholder="entrer le frais du jugement">
                   </div>
-                   <label for="inputNumber" class="col-sm-2 col-form-label">Acompte</label>
+                  <label for="inputText" class="col-sm-2 col-form-label">billet</label>
                   <div class="col-sm-3">
-                    <input type="number"  name="acompte" class="form-control" placeholder="entrer le frais d'acompte">
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <label for="inputTime" class="col-sm-2 col-form-label">1er tranche</label>
-                  <div class="col-sm-3">
-                    <input type="number"  name="tranche1" class="form-control" placeholder="entrer le frais 1er tranche">
-                  </div>
-                  <label for="inputTime" class="col-sm-2 col-form-label">2em Tranche</label>
-                  <div class="col-sm-3">
-                    <input type="number"  name="tranche2" class="form-control" placeholder="entrer le frais 2em trache">
+                    <input type="number"  name="billet" class="form-control" placeholder="entrer le frais de billet">
                   </div>
                 </div>
                 <br>

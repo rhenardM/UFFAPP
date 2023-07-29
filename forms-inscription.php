@@ -100,8 +100,8 @@
                   </div>
                 </div>
                 <div class="row mb-3">
-                  <label class="col-sm-2 col-form-label">Select</label>
-                  <div class="col-sm-4">
+                  <label class="col-sm-2 col-form-label">Sexe</label>
+                  <div class="col-sm-3">
                     <select class="form-select" name="sexe" aria-label="Default select example">
                       <option selected>Veuillez selectioner votre genre</option>
                       <option value="Homme">Homme</option>
@@ -112,33 +112,30 @@
                 </div>
                 <div class="row mb-3">
                   <label for="inputNumber" class="col-sm-2 col-form-label">Numero</label>
-                  <div class="col-sm-4">
+                  <div class="col-sm-3">
                     <input type="number" name="numero" class="form-control" placeholder="numéro de téléphone">
                   </div>
                   <label for="inputNumber" class="col-sm-1 col-form-label">Age</label>
-                  <div class="col-sm-4">
+                  <div class="col-sm-3">
                     <input type="number" name="age" class="form-control" placeholder="votre age">
                   </div>
                 </div>
-                <div class="row mb-3">
-                  <label for="inputNumber" class="col-sm-2 col-form-label">Entrer une photo</label>
-                  <div class="col-sm-4">
-                    <input class="form-control" type="file" id="formFile">
-                  </div>
-                </div>
+               
                 <div class="row mb-3">
                   <label for="inputNumber" class="col-sm-2 col-form-label">Tuteur</label>
-                  <div class="col-sm-4">
+                  <div class="col-sm-3">
                     <input type="text" name="nom_tuteur" class="form-control" placeholder="nom du tuteur">
                   </div>
-                  <div class="col-sm-4">
+                  <label for="inputNumber" class="col-sm-1 col-form-label">Num</label>
+                  <div class="col-sm-3">
                     <input type="number" name="num_tuteur"class="form-control" placeholder="numero du tuteur">
                   </div>
                 </div>
+
                 <div class="row mb-3">
-                  <label for="inputTime" class="col-sm-2 col-form-label">Time</label>
-                  <div class="col-sm-4">
-                    <input type="time" class="form-control">
+                  <label for="inputNumber" class="col-sm-2 col-form-label">Entrer une photo</label>
+                  <div class="col-sm-3">
+                    <input class="form-control" type="file" id="formFile">
                   </div>
                 </div>
                 <div class="row mb-3">

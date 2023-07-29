@@ -28,10 +28,8 @@
                 <thead>
                   <tr>
                     <th scope="col"></th>
-                    <th scope="col">Nom document</th>
                     <th scope="col">Type de document</th>
                     <th scope="col">Nom de la personne</th>
-                    <th scope="col">Description</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
@@ -58,10 +56,8 @@
                 <?php while($ligne=$pdostmt->fetch(PDO::FETCH_ASSOC)):?>
                   <tr>
                     <th scope="row"><!--?php echo $ligne["id"]; ?--></th>
-                    <td><?php echo $ligne["nom_doc"]; ?>&nbsp;</td>
                     <td><?php echo $ligne["type_doc"]; ?>&nbsp;</td>
                     <td><?php echo $ligne["nom_personne"]; ?>&nbsp;</td>
-                    <td><?php echo $ligne["descption"]; ?>&nbsp;</td>
                     <td>
                       <!-- integration modal -->
              
