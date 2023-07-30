@@ -4,7 +4,6 @@
 <body>
 <!-- ======= Header ======= -->
 <?php include "header.php"; ?>
-<?php// include "dash-function.php"; ?>
 <!-- End Header -->
   <main id="main" class="main">
 
@@ -105,11 +104,11 @@
                 </div>
 
                 <div class="card-body">
-                  <h5 class="card-title">Enregistrement Clients <span>|</span></h5>
+                  <h5 class="card-title">Enregistrement  <span>|</span></h5>
                    
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <a href="tables-inscription.php"><i class="bi bi-journal-text text-info"></i></a>
+                      <a href="HSD_PHP_fpdf_Exemples/Fichier.php"><i class="bi bi-journal-text text-info"></i></a>
                     </div>
                     <div class="ps-3">
                       <h6></h6>
