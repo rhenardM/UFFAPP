@@ -39,7 +39,7 @@
 <div class="d-flex align-items-center justify-content-between">
   <a href="dashbord.php" class="logo d-flex align-items-center">
     <img src="" alt="">
-    <span class="d-none d-lg-block">Onlyway Travel</span>
+    <span class="d-none d-lg-block">UFF</span>
   </a>
   <i class="bi bi-list toggle-sidebar-btn"></i>
 </div><!-- End Logo -->
@@ -94,12 +94,7 @@
     <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
         <a href="forms-inscription.php">
-          <i class="bi bi-circle"></i><span>Formulaire d'inscription</span>
-        </a>
-      </li>
-      <li>
-        <a href="forms-frais.php">
-          <i class="bi bi-circle"></i><span>Formulaire de frais</span>
+          <i class="bi bi-circle"></i><span>Formulaire du personeles</span>
         </a>
       </li>
       <li>
@@ -117,17 +112,12 @@
     <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
         <a href="tables-data-doc.php">
-          <i class="bi bi-circle"></i><span>Enregistrements documents</span>
+          <i class="bi bi-circle"></i><span>Documents</span>
         </a>
       </li>
       <li>
         <a href="tables-inscription.php">
-          <i class="bi bi-circle"></i><span>Enregistrements de clients</span>
-        </a>
-      </li>
-      <li>
-        <a href="tables-frais.php">
-          <i class="bi bi-circle"></i><span>Enregistrements de frrais</span><i class=""></i>
+          <i class="bi bi-circle"></i><span>Personnels</span>
         </a>
       </li>
     </ul>

@@ -61,7 +61,7 @@ if(empty($valider)){
               <div class="d-flex justify-content-center py-4">
                 <a href="" class="logo d-flex align-items-center w-auto">
                   <img src="" alt="">
-                  <span class="d-none d-lg-block">Onlyway Travel</span>
+                  <span class="d-none d-lg-block">UFF</span>
                 </a>
               </div><!-- End Logo -->
               <div class="card mb-3">
@@ -90,7 +90,7 @@ if(empty($valider)){
                       <div class="invalid-feedback">S'il vous plait entrez votre mot de passe!</div>
                     </div>
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" name="valider" type="submit">Authentif</button>
+                      <button class="btn btn-primary w-100" name="valider" type="submit">Authentification</button>
                   </form>
                 </div>
               </div>

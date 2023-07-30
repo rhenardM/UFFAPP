@@ -41,15 +41,15 @@
                 </div>
               
                 <div class="card-body">
-                  <h5 class="card-title">Frais payé <span>|</span></h5>
+                  <h5 class="card-title">Personels <span>|</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <a href="tables-frais.php"><i class="bi bi-currency-dollar"></i></a>
+                      <a href="tables-inscription.php"><i class="bi bi-person-circle"></i></a>
                     </div>
                     <div class="ps-3">
-                      <h6>$</h6>
-                      <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Frais payé</span>
+                      <h6><i class="bi bi-person"></i></h6>
+                      <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Les Personels</span>
 
                     </div>
                   </div>
@@ -73,15 +73,15 @@
                 </div>
               
                 <div class="card-body">
-                  <h5 class="card-title">Enregistrements documents <span>|</span></h5>
+                  <h5 class="card-title"><span>|xxxxxxx</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <a href="tables-data-doc.php"><i class="bi bi-journal-text text-info"></i></a>
+                      <a href=""><i class="bi bi-journal-text text-info"></i></a>
                     </div>
                     <div class="ps-3">
-                      <h6></h6>
-                      <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Les documents enregistrer</span>
+                      <h6>xxxxxxx</h6>
+                      <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1"></span>
 
                     </div>
                   </div>
@@ -104,7 +104,7 @@
                 </div>
 
                 <div class="card-body">
-                  <h5 class="card-title">Enregistrement  <span>|</span></h5>
+                  <h5 class="card-title">Documents...<span>|</span></h5>
                    
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -112,7 +112,7 @@
                     </div>
                     <div class="ps-3">
                       <h6></h6>
-                      <span class="text-info small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Les enregistrements fait</span>
+                      <span class="text-info small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Documents enregistrer</span>
                     </div>
                   </div>
                 </div>

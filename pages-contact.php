@@ -23,14 +23,14 @@
               <div class="info-box card">
                 <i class="bi bi-geo-alt"></i>
                 <h3>Address</h3>
-                <p>Kinshasa, Ngaliema UPN<br> Université </p>
+                <p><br>  </p>
               </div>
             </div>
             <div class="col-lg-6">
               <div class="info-box card">
                 <i class="bi bi-telephone"></i>
                 <h3>Call Us</h3>
-                <p>+243 814014247<br>+243 979 O89 801, +243 822 232 010</p>
+                <p>+243 814014247<br></p>
               </div>
             </div>
             <div class="col-lg-6">
@@ -50,5 +50,5 @@
 
     </section>
 
-  </main>
+  </main><br><br><br><br><br><br><br>
   <?php include "footer.php"; ?>

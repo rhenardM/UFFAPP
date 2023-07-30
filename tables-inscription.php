@@ -22,7 +22,7 @@
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Les enregistrements des clients</h5>
+              <h5 class="card-title">Les personeles enregistrer</h5>
               <!-- Table with stripped rows -->
               <table class="table datatable">
                 <thead>
@@ -34,8 +34,8 @@
                     <th scope="col">Sexe</th>
                     <th scope="col">Numero</th>
                     <th scope="col">Age</th>
-                    <th scope="col">Nom tuteur</th>
-                    <th scope="col">Num tuteur</th>
+                    <th scope="col">Autre nom </th>
+                    <th scope="col">Autre num</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
