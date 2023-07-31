@@ -63,7 +63,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 pt-2 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1>Easy Marketing Solutions For Your Business</h1>
+          <h1>Des solutions de gestions simples pour votre entreprise</h1>
           <ul>
             <li><i class="ri-check-line"></i> Dolorem ratione dolorum</li>
             <li><i class="ri-check-line"></i> Quo nihil natus ea non pariatur optio occaecati</li>
@@ -89,8 +89,8 @@
 
         <div class="row content">
           <div class="col-lg-6">
-            <h2>Eum ipsam laborum deleniti velitena</h2>
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>
+            <h2>Société UNION FAIT LA FORCE MINING, UFFM Sarl </h2>
+            <h3>immatriculée au registre de commerce sous le numéro CD/KNG/RCCM/22-A-03396, représentée par son gérant Monsieur <strong>MURUSI NZUKI Alex</strong> </h3>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <p>
@@ -99,9 +99,9 @@
               culpa qui officia deserunt mollit anim id est laborum
             </p>
             <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequa</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</li>
+              <li><i class="ri-check-double-line"></i> UNION FAIT LA FORCE MINING, UFFM Sarl.</li>
+              <li><i class="ri-check-double-line"></i> Société UNION FAIT LA FORCE, UFF Sarl.</li>
+              <li><i class="ri-check-double-line"></i>  MULTI GOLD MINING, MGM Sarl.</li>
             </ul>
             <p class="fst-italic">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -215,7 +215,7 @@
                       </svg>
                       <i class="bx bxl-dribbble"></i>
                     </div>
-                    <h4><a href="">Lorem Ipsum</a></h4>
+                    <h4><a href=""> MULTI GOLD MINING, MGM Sarl </a></h4>
                     <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
                   </div>
                 </div>
@@ -228,7 +228,7 @@
                       </svg>
                       <i class="bx bx-file"></i>
                     </div>
-                    <h4><a href="">Sed Perspiciatis</a></h4>
+                    <h4><a href="">AFRICAN GLOBAL INVESTMENT</a></h4>
                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
                   </div>
                 </div>
@@ -241,7 +241,7 @@
                       </svg>
                       <i class="bx bx-tachometer"></i>
                     </div>
-                    <h4><a href="">Magni Dolores</a></h4>
+                    <h4><a href="">FESOCOMIC Asb</a></h4>
                     <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
                   </div>
                 </div>
@@ -254,7 +254,7 @@
                       </svg>
                       <i class="bx bx-layer"></i>
                     </div>
-                    <h4><a href="">Nemo Enim</a></h4>
+                    <h4><a href="">UNION FAIT LA FORCE</a></h4>
                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
                   </div>
                 </div>
@@ -368,7 +368,7 @@
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Liens utiles</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Accueil</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">A propos de nous</a></li>
@@ -386,10 +386,10 @@
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <h4>Newsletter</h4>
+            <p></p>
             <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
+              <input type="email" name="email"><input type="submit" value="Soumettre">
             </form>
           </div>
 
