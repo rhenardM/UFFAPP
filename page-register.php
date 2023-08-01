@@ -71,15 +71,15 @@ if(isset($valider)){
 
               <div class="d-flex justify-content-center py-4">
                 <a href="" class="logo d-flex align-items-center w-auto">
-                  <img src="" alt="">
+                  <img src="assets2/img/logo.png" alt="">
                   <span class="d-none d-lg-block">UFF</span>
                 </a>
               </div><!-- End Logo -->
               <div class="card mb-3">
                 <div class="card-body">
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4"></h5>
-                    <p class="text-center small"></p>
+                    <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
+                    <p class="text-center small">Enter your personal details to create account</p>
                     <?php if (!empty($message)) {?>
                     <div class="alert alert-danger">
                         <?= $message ?>
@@ -95,7 +95,7 @@ if(isset($valider)){
                     <div class="col-12">
                       <label for="yourName" class="form-label">prenom</label>
                       <input type="text" name="prenom" class="form-control" id="yourName" required>
-                      <div class="invalid-feedback">Please, entrez votre nom!</div>
+                      <div class="invalid-feedback">s'il vous plait, veuillez entrez votre nom!</div>
                     </div>
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Nom d'utilisateur</label>

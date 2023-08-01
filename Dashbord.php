@@ -25,7 +25,6 @@
           <div class="row">
             <!-- Sales Card -->
             <!-- End Sales Card -->
-         
             <!-- Revenue Card -->
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card revenue-card">
@@ -45,10 +44,10 @@
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <a href="tables-inscription.php"><i class="bi bi-person-circle"></i></a>
+                      <a href="tables-inscription.php"><i class="bi bi-people-fill"></i></a>
                     </div>
                     <div class="ps-3">
-                      <h6><i class="bi bi-person"></i></h6>
+                      <h6><i class="bi bi-people"></i></h6>
                       <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Les Personels</span>
 
                     </div>
@@ -146,7 +145,7 @@
                     radar: {
                       // shape: 'circle',
                       indicator: [{
-                          name: 'Frais payé',
+                          name: 'Documents disponible',
                           max: 6500
                         },
                         {
