@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <body>
 <!-- ======= Header ======= -->
 <?php include "header.php"; ?>
@@ -56,7 +55,6 @@
 
               </div>
             </div><!-- End Revenue Card -->
-                     
             <!-- Revenue Card -->
             <!-- <div class="col-xxl-4 col-md-6">
               <div class="card info-card revenue-card">
@@ -105,7 +103,6 @@
 
                 <div class="card-body">
                   <h5 class="card-title">Documents...<span>|</span></h5>
-                   
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                       <a href="HSD_PHP_fpdf_Exemples/Fichier.php"><i class="bi bi-journal-text text-info"></i></a>
@@ -120,8 +117,8 @@
               </div>
             </div><!-- End Revenue Card -->
 
-           <!-- Budget Report -->
-           <div class="card">
+          <!-- Budget Report -->
+          <div class="card">
             <div class="filter">
               <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
               <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">

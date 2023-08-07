@@ -8,7 +8,7 @@
 
   <main id="main" class="main">
     <div class="pagetitle">
-      <h1>Table d'enregistrement</h1>
+      <h1>Table d'enregistrement du personneles</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="accueil.php">Accueil</a></li>
@@ -18,11 +18,11 @@
       </nav>
     </div><!-- End Page Title -->
     <section class="section">
-      <div class="row">
+      <div class="row"> 
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Les personeles enregistrer</h5>
+              <h5 class="card-title">Les personneles enregistrer </h5>
               <!-- Table with stripped rows -->
               <table class="table datatable">
                 <thead>
