@@ -94,7 +94,7 @@
     <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
         <a href="forms-inscription.php">
-          <i class="bi bi-circle"></i><span>Formulaire du personneles</span>
+          <i class="bi bi-circle"></i><span>Formulaire du personeles</span>
         </a>
       </li>
       <li>
@@ -122,13 +122,13 @@
       </li>
     </ul>
   </li><!-- End Tables Nav
-
+  <!-- 
   <li class="nav-item">
         <a class="nav-link collapsed" href="pages-contact.php">
           <i class="bi bi-envelope"></i>
           <span>Nous Contacter</span>
         </a>
-      </li> -->
+      </li>
     <!-- End Contact Page Nav -->
   
 </ul>
